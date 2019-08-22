@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+<center>
+    <head>
+        <title>Livro de visitas</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+        <link rel="stylesheet" href="{% static 'css/livrodevisitas.css' %}">    
+    </head>
+    <body>
+
+        <div>
+            <h1><a href="/">Seja bem vindo ao livro de visitas</a></h1>
+        </div>
+
+        <div>
+            <h2><a href="">Deixe seu nome e sua mensagem:</a></h2>
+        </div>
+
+        <form method="POST" class="recado-form">{% csrf_token %}
+        {{ form.as_p }}
+
+        <button type="submit" class="save btn btn-default">Enviar</button>
+        
+            
+    </form>
+        
+    
+        
+    </body>
+    
+</html>
